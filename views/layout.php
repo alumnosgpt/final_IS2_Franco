@@ -32,7 +32,7 @@
                             <i class="bi bi-gear me-2"></i>Desplegar
                         </a>
                         <ul class="dropdown-menu  dropdown-menu-dark "id="dropwdownRevision" style="margin: 0;">
-                            <h6 class="dropdown-header">Seleccione una Accion</h6>
+                            <h6 class="dropdown-header">Seleccione una Acción</h6>
                             <li>
                                 <a class="dropdown-item nav-link text-white " href="/final_IS2_Franco/especialidades"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Especialidades</a>
                             </li>
