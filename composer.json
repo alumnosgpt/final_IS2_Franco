@@ -1,6 +1,6 @@
 {
     "name": "mindef/final_IS2_Franco",
-    "description": "Proyecto MVC demo",
+    "description": "Proyecto MVC final",
     "type": "project",
     "config": {
         "platform-check": false
