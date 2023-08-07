@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="build/js/app.js"></script>
-    <link rel="shortcut icon" href="<?= asset('images/cit.png') ?>" type="image/x-icon">
+    <link rel="shortcut icon" href="<?= asset('images/hospital_logo.jpg') ?>" type="image/x-icon">
     <link rel="stylesheet" href="<?= asset('build/styles.css') ?>">
-    <title>DemoApp</title>
+    <title>Hospital La Esperanza</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark  bg-dark">
@@ -17,7 +17,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand" href="/ejemplo/">
-                <img src="<?= asset('./images/cit.png') ?>" width="35px'" alt="cit" >
+                <img src="<?= asset('./images/hospital_logo.jpg') ?>" width="35px'" alt="cit" >
                 Hospital La Esperanza
             </a>
             <div class="collapse navbar-collapse" id="navbarToggler">
@@ -48,19 +48,13 @@
                             <li>
                                 <a class="dropdown-item nav-link text-white " href="/final_IS2_Franco/citas"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Citas</a>
                             </li>
-                        
-                    
-                        
                         </ul>
                     </div> 
-
                 </ul> 
                 <div class="col-lg-1 d-grid mb-lg-0 mb-2">
                     <!-- Ruta relativa desde el archivo donde se incluye menu.php -->
                     <a href="/menu/" class="btn btn-danger"><i class="bi bi-arrow-bar-left"></i>MENÚ</a>
                 </div>
-
-            
             </div>
         </div>
         
