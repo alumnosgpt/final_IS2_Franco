@@ -29,12 +29,24 @@
   
                     <div class="nav-item dropdown " >
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                            <i class="bi bi-gear me-2"></i>Dropdown
+                            <i class="bi bi-gear me-2"></i>Desplegar
                         </a>
                         <ul class="dropdown-menu  dropdown-menu-dark "id="dropwdownRevision" style="margin: 0;">
-                            <!-- <h6 class="dropdown-header">Información</h6> -->
+                            <h6 class="dropdown-header">Información</h6>
                             <li>
-                                <a class="dropdown-item nav-link text-white " href="/aplicaciones/nueva"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Subitem</a>
+                                <a class="dropdown-item nav-link text-white " href="/final_IS2_Franco/especialidades"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Especialidades</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item nav-link text-white " href="/final_IS2_Franco/clinicas"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Clinicas</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item nav-link text-white " href="/final_IS2_Franco/medicos"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Medicos</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item nav-link text-white " href="/final_IS2_Franco/pacientes"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Pacientes</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item nav-link text-white " href="/final_IS2_Franco/citas"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Citas</a>
                             </li>
                         
                     
