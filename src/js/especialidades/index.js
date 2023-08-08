@@ -1,5 +1,6 @@
 import Swal from "sweetalert2";
 import { validarFormulario, Toast, confirmacion } from "../funciones";
+import { Dropdown } from "bootstrap";
 
 const formulario = document.querySelector('form');
 const tablaEspecialidades = document.getElementById('tablaEspecialidades');
