@@ -30,7 +30,6 @@ const guardar = async (evento) => {
     const url = '/final_IS2_Franco/API/especialidades/guardar';
     const config = {
         method : 'POST',
-        // body: otroNombre
         body
     }
 
@@ -92,7 +91,6 @@ const buscar = async () => {
                 const tr = document.createElement('tr');
                 const td1 = document.createElement('td')
                 const td2 = document.createElement('td')
-                const td3 = document.createElement('td')
                 const td4 = document.createElement('td')
                 const td5 = document.createElement('td')
                 const buttonModificar = document.createElement('button')
@@ -109,6 +107,7 @@ const buscar = async () => {
 
                 td1.innerText = contador;
                 td2.innerText = especialidad.espec_nombre
+                
                 
                 // ESTRUCTURANDO DOM
                 td4.appendChild(buttonModificar)
