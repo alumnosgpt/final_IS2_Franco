@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,11 +11,40 @@
     <h1 class="text-center">Formulario de Medicos</h1>
     <div class="row justify-content-center mb-5">
         <form class="col-lg-8 border bg-light p-3" id="formulariomedico">
-            <input type="hidden" name="espec_id" id="espec_id">
+            <input type="hidden" name="medico_id" id="medico_id">
             <div class="row mb-3">
                 <div class="col">
                     <label for="medico_nombre">Nombre de la especialidad</label>
                     <input type="text" name="medico_nombre" id="medico_nombre" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="medico_nombre">Especialidad del Medico</label>
+                    <select name="medico_espec" id="medico_espec" class="form-control">
+                        <option value="">SELECIONE...</option>
+                        <?php foreach ($especialidades as $key => $value) { ?>
+
+                            <option value="<?= $value['espec_id']?>"><?= $value['espec_nombre']?></option>
+                            
+                      <?php  }?>
+                
+
+
+                    </select>
+                </div>
+
+                <div class="col">
+                    <label for="medico_nombre">Clinica del Medico</label>
+                    <select name="medico_clinica" id="medico_clinica" class="form-control">
+                        <option value="">SELECIONE...</option>
+                        <?php foreach ($clinicas as $key => $value) { ?>
+
+                            <option value="<?= $value['clinica_id']?>"><?= $value['clinica_nombre']?></option>
+                            
+                      <?php  }?>
+                
+
+
+                    </select>
                 </div>
             </div>
             <div class="row mb-3">

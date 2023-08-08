@@ -3,7 +3,7 @@ import { validarFormulario, Toast, confirmacion } from "../funciones";
 import { Dropdown } from "bootstrap";
 
 const formulario = document.querySelector('form');
-const tablamedicos = document.getElementById('tablamedicos');
+const tablamedicos = document.getElementById('tablaMedicos');
 const btnBuscar = document.getElementById('btnBuscar');
 const btnModificar = document.getElementById('btnModificar');
 const btnGuardar = document.getElementById('btnGuardar');
@@ -143,6 +143,8 @@ const colocarDatos = (datos) => {
 
     formulario.medico_nombre.value = datos.medico_nombre;
     formulario.medico_id.value = datos.medico_id;
+    formulario.medico_clinica.value= datos.medico_clinica;
+    formulario.medico_espec.value= datos.medico_espec
 
     btnGuardar.disabled = true;
     btnGuardar.parentElement.style.display = 'none';

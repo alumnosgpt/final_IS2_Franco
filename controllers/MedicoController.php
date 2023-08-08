@@ -4,19 +4,25 @@ namespace Controllers;
 
 use Exception;
 use Model\Medico;
+use Model\Clinica;
+use Model\Especialidad;
 use MVC\Router;
 
 class MedicoController{
     public static function index(Router $router){
-        $medicos= Medico::all();
-        $router->render('medicos$medicos/index', [
-            'medicos$medicos' => $medicos,
+        $clinicas= Clinica::Fetcharray('SELECT * FROM clinicas where clinica_situacion = 1');
+        $especialidades= Especialidad::Fetcharray('SELECT * FROM especialidades where espec_situacion = 1');
+        $router->render('medicos/index', [
+            'clinicas' => $clinicas,
+            'especialidades' => $especialidades
         ]);
 
     }
 
     public static function guardarAPI(){
         try {
+
+ 
          
             $medico = new Medico($_POST);
         
@@ -110,10 +116,12 @@ class MedicoController{
 
     public static function buscarAPI(){
 
-      
+
+
+  
         $medico_nombre = $_GET['medico_nombre'];
 
-        $sql = "SELECT * FROM medicos$medicos where medico_situacion = 1 ";
+        $sql = "SELECT * FROM medicos inner join especialidades on medico_espec= espec_id inner join clinicas on medico_clinica = clinica_id where medico_situacion = 1 ";
         if($medico_nombre != '') {
             $sql.= " and medico_nombre like '%$medico_nombre%' ";
         }
