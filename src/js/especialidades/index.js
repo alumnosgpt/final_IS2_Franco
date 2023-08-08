@@ -78,7 +78,7 @@ const buscar = async () => {
 
         tablaEspecialidades.tBodies[0].innerHTML = '';
         const fragment = document.createDocumentFragment();
-        
+
         if (data.length > 0) {
             let contador = 1;
             data.forEach(especialidad => {
@@ -103,7 +103,7 @@ const buscar = async () => {
 
                 td1.innerText = contador;
                 td2.innerText = especialidad.espec_nombre;
-                
+
                 // ESTRUCTURANDO DOM
                 td4.appendChild(buttonModificar);
                 td5.appendChild(buttonEliminar);
