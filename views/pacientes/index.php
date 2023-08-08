@@ -16,6 +16,14 @@
                     <label for="paciente_nombre">Nombre del Paciente</label>
                     <input type="text" name="paciente_nombre" id="paciente_nombre" class="form-control">
                 </div>
+                <div class="col">
+                    <label for="paciente_dpi">DPI del Paciente</label>
+                    <input type="text" name="paciente_dpi" id="paciente_dpi" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="paciente_telefono">Telefono del Paciente</label>
+                    <input type="text" name="paciente_telefono" id="paciente_telefono" class="form-control">
+                </div>
             </div>
             <div class="row mb-3">
                 <div class="col">

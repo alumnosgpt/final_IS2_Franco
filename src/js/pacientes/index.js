@@ -93,9 +93,12 @@ const buscar = async () => {
                 const td1 = document.createElement('td');
                 const td2 = document.createElement('td');
                 const td3 = document.createElement('td');
-              
-              
                 const td4 = document.createElement('td');
+                const td5 = document.createElement('td');
+                const td6 = document.createElement('td');
+              
+              
+            
                 const buttonModificar = document.createElement('button');
                 const buttonEliminar = document.createElement('button');
 
@@ -110,14 +113,21 @@ const buscar = async () => {
 
                 td1.innerText = contador;
                 td2.innerText = paciente.paciente_nombre;
+                td3.innerText = paciente.paciente_dpi;
+                td4.innerText = paciente.paciente_telefono;
+
+
 
                 // ESTRUCTURANDO DOM
-                td3.appendChild(buttonModificar);
-                td4.appendChild(buttonEliminar);
+                td5.appendChild(buttonModificar);
+                td6.appendChild(buttonEliminar);
                 tr.appendChild(td1);
                 tr.appendChild(td2);
                 tr.appendChild(td3);
                 tr.appendChild(td4);
+                tr.appendChild(td5);
+                tr.appendChild(td6);
+
 
                 fragment.appendChild(tr);
 
@@ -143,6 +153,8 @@ const colocarDatos = (datos) => {
 
     formulario.paciente_nombre.value = datos.paciente_nombre;
     formulario.paciente_id.value = datos.paciente_id;
+    formulario.paciente_dpi.value= datos.paciente_dpi;
+    formulario.paciente_telefono.value= datos.paciente_telefono
 
     btnGuardar.disabled = true;
     btnGuardar.parentElement.style.display = 'none';

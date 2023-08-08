@@ -52,7 +52,9 @@ class PacienteController{
 
             
             $paciente = new Paciente($_POST);
+      
             $resultado = $paciente->actualizar();
+      
 
             if($resultado['resultado'] == 1){
                 echo json_encode([

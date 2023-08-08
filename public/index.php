@@ -8,6 +8,7 @@ use Controllers\AppController;
 use Controllers\EspecialidadController;
 use Controllers\ClinicaController;
 use Controllers\MedicoController;
+use Controllers\PacienteController;
 
 $router = new Router();
 $router->setBaseURL('/' . $_ENV['APP_NAME']);
