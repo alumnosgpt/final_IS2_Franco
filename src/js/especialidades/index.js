@@ -15,6 +15,8 @@ btnCancelar.disabled = true;
 btnCancelar.parentElement.style.display = 'none';
 
 const guardar = async (evento) => {
+
+
     evento.preventDefault();
     if (!validarFormulario(formulario, ['espec_id'])) {
         Toast.fire({
@@ -37,6 +39,7 @@ const guardar = async (evento) => {
         const data = await respuesta.json();
 
         console.log(data);
+
         const { codigo, mensaje, detalle } = data;
         let icon = 'info';
         switch (codigo) {
@@ -66,6 +69,7 @@ const guardar = async (evento) => {
 };
 
 const buscar = async () => {
+  
     let espec_nombre = formulario.espec_nombre.value;
     const url = `/final_IS2_Franco/API/especialidades/buscar?espec_nombre=${espec_nombre}`;
     const config = {
