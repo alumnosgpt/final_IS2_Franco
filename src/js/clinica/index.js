@@ -76,6 +76,7 @@ const buscar = async () => {
     try {
         const respuesta = await fetch(url, config);
         const data = await respuesta.json();
+        console.log(data)
 
         tablaClinicas.tBodies[0].innerHTML = '';
         const fragment = document.createDocumentFragment();

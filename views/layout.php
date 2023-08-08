@@ -36,7 +36,7 @@
                                 <a class="dropdown-item nav-link text-white " href="/final_IS2_Franco/especialidades"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Especialidades</a>
                             </li>
                             <li>
-                                <a class="dropdown-item nav-link text-white " href="/final_IS2_Franco/clinicas"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Clinicas</a>
+                                <a class="dropdown-item nav-link text-white " href="/final_IS2_Franco/clinica"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Clinicas</a>
                             </li>
                             <li>
                                 <a class="dropdown-item nav-link text-white " href="/final_IS2_Franco/medicos"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Medicos</a>
