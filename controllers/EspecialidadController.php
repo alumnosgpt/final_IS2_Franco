@@ -17,19 +17,25 @@ class EspecialidadController{
 
     public static function guardarAPI(){
         try {
+         
             $especialidad = new Especialidad($_POST);
+        
             $resultado = $especialidad->crear();
+
+  
 
             if($resultado['resultado'] == 1){
                 echo json_encode([
                     'mensaje' => 'Registro guardado correctamente',
                     'codigo' => 1
                 ]);
+                exit;
             }else{
                 echo json_encode([
                     'mensaje' => 'Ocurrió un error',
                     'codigo' => 0
                 ]);
+                exit;
             }
         } catch (Exception $e) {
             echo json_encode([
@@ -37,6 +43,7 @@ class EspecialidadController{
                 'mensaje' => 'Ocurrió un error',
                 'codigo' => 0
             ]);
+            exit;
         }
     }
 
