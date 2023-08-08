@@ -41,7 +41,6 @@
                     <tr>
                         <th>NO. </th>
                         <th>NOMBRE</th>
-                        <th>GUARDAR</th>
                         <th>MODIFICAR</th>
                         <th>ELIMINAR</th>
                     </tr>

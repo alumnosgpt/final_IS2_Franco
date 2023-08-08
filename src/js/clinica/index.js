@@ -106,8 +106,8 @@ const buscar = async () => {
                 td2.innerText = clinica.clinica_nombre;
 
                 // ESTRUCTURANDO DOM
-                td4.appendChild(buttonModificar);
-                td5.appendChild(buttonEliminar);
+                td3.appendChild(buttonModificar);
+                td4.appendChild(buttonEliminar);
                 tr.appendChild(td1);
                 tr.appendChild(td2);
                 tr.appendChild(td3); 
@@ -137,7 +137,7 @@ const colocarDatos = (datos) => {
     formulario.clinica_id.value = datos.clinica_id;
 
     btnGuardar.disabled = true;
-    btnGuardar.parentElement.style.display = '';
+    btnGuardar.parentElement.style.display = 'none';
     btnBuscar.disabled = true;
     btnBuscar.parentElement.style.display = 'none';
     btnModificar.disabled = false;
@@ -225,6 +225,7 @@ const eliminar = async (id) => {
             switch (codigo) {
                 case 1:
                     icon = 'success';
+                    formulario.reset()
                     buscar();
                     break;
 

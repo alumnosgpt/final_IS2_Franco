@@ -98,6 +98,7 @@ class ClinicaController {
     }
 
     public static function buscarAPI() {
+
         $clinica_nombre = $_GET['clinica_nombre'];
 
         $sql = "SELECT * FROM clinicas where clinica_situacion = 1 ";
@@ -107,6 +108,7 @@ class ClinicaController {
         try {
             $clinicas = Clinica::fetchArray($sql);
             echo json_encode($clinicas);
+            exit;
         } catch (Exception $e) {
             echo json_encode([
                 'detalle' => $e->getMessage(),
