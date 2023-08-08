@@ -19,15 +19,6 @@
             </div>
             <div class="row mb-3">
                 <div class="col">
-                    <label for="clinica_situacion">Situación</label>
-                    <select name="clinica_situacion" id="clinica_situacion" class="form-control">
-                        <option value="1">Activa</option>
-                        <option value="0">Inactiva</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col">
                     <button type="submit" form="formularioClinica" id="btnGuardar" class="btn btn-primary w-100">Guardar</button>
                 </div>
                 <div class="col">
