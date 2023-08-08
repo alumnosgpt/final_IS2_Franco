@@ -9,6 +9,7 @@ module.exports = {
     'js/especialidades/index': './src/js/especialidades/index.js',
     'js/clinica/index': './src/js/clinica/index.js',
     'js/medicos/index': './src/js/medicos/index.js',
+    'js/pacientes/index': './src/js/pacientes/index.js',
   },
   output: {
     filename: '[name].js',
