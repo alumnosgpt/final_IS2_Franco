@@ -49,6 +49,8 @@ class EspecialidadController{
 
     public static function modificarAPI(){
         try {
+
+            
             $especialidad = new Especialidad($_POST);
             $resultado = $especialidad->actualizar();
 
@@ -57,11 +59,13 @@ class EspecialidadController{
                     'mensaje' => 'Registro modificado correctamente',
                     'codigo' => 1
                 ]);
+                exit;
             }else{
                 echo json_encode([
                     'mensaje' => 'Ocurrió un error',
                     'codigo' => 0
                 ]);
+                exit;
             }
             // echo json_encode($resultado);
         } catch (Exception $e) {
@@ -75,6 +79,7 @@ class EspecialidadController{
 
     public static function eliminarAPI(){
         try {
+
             $espec_id = $_POST['espec_id'];
             $especialidad = Especialidad::find($espec_id);
             $especialidad->espec_situacion = 0;
@@ -85,6 +90,8 @@ class EspecialidadController{
                     'mensaje' => 'Registro eliminado correctamente',
                     'codigo' => 1
                 ]);
+                exit;
+                
             }else{
                 echo json_encode([
                     'mensaje' => 'Ocurrió un error',
@@ -102,6 +109,8 @@ class EspecialidadController{
     }
 
     public static function buscarAPI(){
+
+      
         $espec_nombre = $_GET['espec_nombre'];
 
         $sql = "SELECT * FROM especialidades where espec_situacion = 1 ";
@@ -113,6 +122,7 @@ class EspecialidadController{
             $especialidades= Especialidad::fetchArray($sql);
     
             echo json_encode($especialidades);
+            exit;
         } catch (Exception $e) {
             echo json_encode([
                 'detalle' => $e->getMessage(),

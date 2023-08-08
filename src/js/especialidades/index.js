@@ -69,7 +69,7 @@ const guardar = async (evento) => {
 };
 
 const buscar = async () => {
-  
+
     let espec_nombre = formulario.espec_nombre.value;
     const url = `/final_IS2_Franco/API/especialidades/buscar?espec_nombre=${espec_nombre}`;
     const config = {
@@ -79,6 +79,7 @@ const buscar = async () => {
     try {
         const respuesta = await fetch(url, config);
         const data = await respuesta.json();
+        console.log(data)
 
         tablaEspecialidades.tBodies[0].innerHTML = '';
         const fragment = document.createDocumentFragment();
@@ -90,7 +91,9 @@ const buscar = async () => {
                 const tr = document.createElement('tr');
                 const td1 = document.createElement('td');
                 const td2 = document.createElement('td');
-                const td3 = document.createElement('td'); 
+                const td3 = document.createElement('td');
+              
+              
                 const td4 = document.createElement('td');
                 const buttonModificar = document.createElement('button');
                 const buttonEliminar = document.createElement('button');
@@ -108,11 +111,11 @@ const buscar = async () => {
                 td2.innerText = especialidad.espec_nombre;
 
                 // ESTRUCTURANDO DOM
-                td4.appendChild(buttonModificar);
-                td5.appendChild(buttonEliminar);
+                td3.appendChild(buttonModificar);
+                td4.appendChild(buttonEliminar);
                 tr.appendChild(td1);
                 tr.appendChild(td2);
-                tr.appendChild(td3); 
+                tr.appendChild(td3);
                 tr.appendChild(td4);
 
                 fragment.appendChild(tr);
@@ -135,11 +138,13 @@ const buscar = async () => {
 };
 
 const colocarDatos = (datos) => {
+
+
     formulario.espec_nombre.value = datos.espec_nombre;
     formulario.espec_id.value = datos.espec_id;
 
     btnGuardar.disabled = true;
-    btnGuardar.parentElement.style.display = '';
+    btnGuardar.parentElement.style.display = 'none';
     btnBuscar.disabled = true;
     btnBuscar.parentElement.style.display = 'none';
     btnModificar.disabled = false;
@@ -179,14 +184,19 @@ const modificar = async () => {
         const respuesta = await fetch(url, config);
         const data = await respuesta.json();
 
+        console.log(data)
+
+
         const { codigo, mensaje, detalle } = data;
         let icon = 'info';
         switch (codigo) {
             case 1:
-                formulario.reset();
+          
                 icon = 'success';
+                formulario.reset();
                 buscar();
                 cancelarAccion();
+       
                 break;
 
             case 0:
@@ -202,6 +212,8 @@ const modificar = async () => {
             icon,
             text: mensaje
         });
+
+        buscar()
 
     } catch (error) {
         console.log(error);
@@ -227,6 +239,7 @@ const eliminar = async (id) => {
             switch (codigo) {
                 case 1:
                     icon = 'success';
+                    formulario.reset()
                     buscar();
                     break;
 
@@ -243,6 +256,8 @@ const eliminar = async (id) => {
                 icon,
                 text: mensaje
             });
+
+            buscar()
 
         } catch (error) {
             console.log(error);
