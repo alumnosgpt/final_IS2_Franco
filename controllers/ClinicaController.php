@@ -24,11 +24,13 @@ class ClinicaController {
                     'mensaje' => 'Registro guardado correctamente',
                     'codigo' => 1
                 ]);
+                exit;
             } else {
                 echo json_encode([
                     'mensaje' => 'Ocurrió un error',
                     'codigo' => 0
                 ]);
+                exit;
             }
         } catch (Exception $e) {
             echo json_encode([
@@ -36,6 +38,7 @@ class ClinicaController {
                 'mensaje' => 'Ocurrió un error',
                 'codigo' => 0
             ]);
+            exit;
         }
     }
 
@@ -49,6 +52,7 @@ class ClinicaController {
                     'mensaje' => 'Registro modificado correctamente',
                     'codigo' => 1
                 ]);
+                exit;
             } else {
                 echo json_encode([
                     'mensaje' => 'Ocurrió un error',
@@ -76,6 +80,7 @@ class ClinicaController {
                     'mensaje' => 'Registro eliminado correctamente',
                     'codigo' => 1
                 ]);
+                exit;
             } else {
                 echo json_encode([
                     'mensaje' => 'Ocurrió un error',
