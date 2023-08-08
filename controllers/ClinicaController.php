@@ -9,7 +9,7 @@ use MVC\Router;
 class ClinicaController {
     public static function index(Router $router) {
         $clinicas = Clinica::all();
-        $router->render('clinicas/index', [
+        $router->render('clinica/index', [
             'clinicas' => $clinicas,
         ]);
     }
