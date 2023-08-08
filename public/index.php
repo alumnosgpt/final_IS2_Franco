@@ -7,6 +7,7 @@ use MVC\Router;
 use Controllers\AppController;
 use Controllers\EspecialidadController;
 use Controllers\ClinicaController;
+use Controllers\MedicoController;
 
 $router = new Router();
 $router->setBaseURL('/' . $_ENV['APP_NAME']);
@@ -27,6 +28,15 @@ $router->post('/API/clinica/guardar', [ClinicaController::class,'guardarAPI']);
 $router->post('/API/clinica/modificar', [ClinicaController::class,'modificarAPI']);
 $router->post('/API/clinica/eliminar', [ClinicaController::class,'eliminarAPI']);
 $router->get('/API/clinica/buscar', [ClinicaController::class,'buscarAPI']);
+
+
+
+// Agregamos las rutas y controladores para las Medicos
+$router->get('/medicos', [MedicoController::class,'index']);
+$router->post('/API/medicos/guardar', [MedicoController::class,'guardarAPI']);
+$router->post('/API/medicos/modificar', [MedicoController::class,'modificarAPI']);
+$router->post('/API/medicos/eliminar', [MedicoController::class,'eliminarAPI']);
+$router->get('/API/medicos/buscar', [MedicoController::class,'buscarAPI']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();
