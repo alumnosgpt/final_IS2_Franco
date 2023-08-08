@@ -86,9 +86,8 @@ const buscar = async () => {
                 const tr = document.createElement('tr');
                 const td1 = document.createElement('td');
                 const td2 = document.createElement('td');
-                const td3 = document.createElement('td'); // Agregado según el código que proporcionaste
+                const td3 = document.createElement('td'); 
                 const td4 = document.createElement('td');
-                const td5 = document.createElement('td');
                 const buttonModificar = document.createElement('button');
                 const buttonEliminar = document.createElement('button');
 
@@ -109,9 +108,8 @@ const buscar = async () => {
                 td5.appendChild(buttonEliminar);
                 tr.appendChild(td1);
                 tr.appendChild(td2);
-                tr.appendChild(td3); // Agregado según el código que proporcionaste
+                tr.appendChild(td3); 
                 tr.appendChild(td4);
-                tr.appendChild(td5);
 
                 fragment.appendChild(tr);
 
@@ -146,7 +144,6 @@ const colocarDatos = (datos) => {
     btnCancelar.parentElement.style.display = '';
     divTabla.style.display = 'none';
 
-    // modalEjemploBS.show();
 };
 
 const cancelarAccion = () => {
