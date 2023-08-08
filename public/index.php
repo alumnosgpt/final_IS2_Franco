@@ -29,8 +29,6 @@ $router->post('/API/clinica/modificar', [ClinicaController::class,'modificarAPI'
 $router->post('/API/clinica/eliminar', [ClinicaController::class,'eliminarAPI']);
 $router->get('/API/clinica/buscar', [ClinicaController::class,'buscarAPI']);
 
-
-
 // Agregamos las rutas y controladores para las Medicos
 $router->get('/medicos', [MedicoController::class,'index']);
 $router->post('/API/medicos/guardar', [MedicoController::class,'guardarAPI']);
