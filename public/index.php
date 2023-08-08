@@ -23,10 +23,10 @@ $router->get('/API/especialidades/buscar', [EspecialidadController::class,'busca
 
 // Agregamos las rutas y controladores para las clínicas
 $router->get('/clinica', [ClinicaController::class,'index']);
-$router->post('/API/clinicas/guardar', [ClinicaController::class,'guardarAPI']);
-$router->post('/API/clinicas/modificar', [ClinicaController::class,'modificarAPI']);
-$router->post('/API/clinicas/eliminar', [ClinicaController::class,'eliminarAPI']);
-$router->get('/API/clinicas/buscar', [ClinicaController::class,'buscarAPI']);
+$router->post('/API/clinica/guardar', [ClinicaController::class,'guardarAPI']);
+$router->post('/API/clinica/modificar', [ClinicaController::class,'modificarAPI']);
+$router->post('/API/clinica/eliminar', [ClinicaController::class,'eliminarAPI']);
+$router->get('/API/clinica/buscar', [ClinicaController::class,'buscarAPI']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();

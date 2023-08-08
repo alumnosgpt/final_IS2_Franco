@@ -51,6 +51,6 @@
             </table>
         </div>
     </div>
-    <script src="<?= asset('./build/js/clinicas/index.js')  ?>"></script>
+    <script src="<?= asset('./build/js/clinica/index.js')  ?>"></script>
 </body>
 </html>

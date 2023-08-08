@@ -27,7 +27,7 @@ const guardar = async (evento) => {
 
     const body = new FormData(formulario);
     body.delete('clinica_id');
-    const url = '/final_IS2_Franco/API/clinicas/guardar';
+    const url = '/final_IS2_Franco/API/clinica/guardar';
     const config = {
         method: 'POST',
         body
@@ -68,7 +68,7 @@ const guardar = async (evento) => {
 
 const buscar = async () => {
     let clinica_nombre = formulario.clinica_nombre.value;
-    const url = `/final_IS2_Franco/API/clinicas/buscar?clinica_nombre=${clinica_nombre}`;
+    const url = `/final_IS2_Franco/API/clinica/buscar?clinica_nombre=${clinica_nombre}`;
     const config = {
         method: 'GET'
     };
@@ -166,7 +166,7 @@ const modificar = async () => {
     }
 
     const body = new FormData(formulario);
-    const url = '/final_IS2_Franco/API/clinicas/modificar';
+    const url = '/final_IS2_Franco/API/clinica/modificar';
     const config = {
         method: 'POST',
         body
@@ -175,6 +175,7 @@ const modificar = async () => {
     try {
         const respuesta = await fetch(url, config);
         const data = await respuesta.json();
+        console.log(data)
 
         const { codigo, mensaje, detalle } = data;
         let icon = 'info';
@@ -209,7 +210,7 @@ const eliminar = async (id) => {
     if (await confirmacion('warning', '¿Desea eliminar este registro?')) {
         const body = new FormData();
         body.append('clinica_id', id);
-        const url = '/final_IS2_Franco/API/clinicas/eliminar';
+        const url = '/final_IS2_Franco/API/clinica/eliminar';
         const config = {
             method: 'POST',
             body
