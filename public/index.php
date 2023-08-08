@@ -9,6 +9,7 @@ use Controllers\EspecialidadController;
 use Controllers\ClinicaController;
 use Controllers\MedicoController;
 use Controllers\PacienteController;
+use Controllers\CitaController;
 
 $router = new Router();
 $router->setBaseURL('/' . $_ENV['APP_NAME']);
@@ -43,6 +44,13 @@ $router->post('/API/pacientes/guardar', [PacienteController::class,'guardarAPI']
 $router->post('/API/pacientes/modificar', [PacienteController::class,'modificarAPI']);
 $router->post('/API/pacientes/eliminar', [PacienteController::class,'eliminarAPI']);
 $router->get('/API/pacientes/buscar', [PacienteController::class,'buscarAPI']);
+
+// Agregamos las rutas y controladores para las citas
+$router->get('/citas', [CitaController::class,'index']);
+$router->post('/API/citas/guardar', [CitaController::class,'guardarAPI']);
+$router->post('/API/citas/modificar', [CitaController::class,'modificarAPI']);
+$router->post('/API/citas/eliminar', [CitaController::class,'eliminarAPI']);
+$router->get('/API/citas/buscar', [CitaController::class,'buscarAPI']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();
