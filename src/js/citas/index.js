@@ -5,21 +5,20 @@ import { Dropdown } from "bootstrap";
 const formulario = document.querySelector('form');
 const tablaCitas = document.getElementById('tablaCitas');
 const btnBuscar = document.getElementById('btnBuscar');
-const btnModificar = document.getElementById('btnModificar');
+const btnVerDetalle = document.getElementById('btnVerDetalle');
 const btnGuardar = document.getElementById('btnGuardar');
 const btnCancelar = document.getElementById('btnCancelar');
 const divTabla = document.getElementById('divTabla');
 
-btnModificar.disabled = true;
-btnModificar.parentElement.style.display = 'none';
-btnCancelar.disabled = true;
-btnCancelar.parentElement.style.display = 'none';
+// btnModificar.disabled = true;
+// btnVerDetalle.parentElement.style.display = 'none';
+
 
 const guardar = async (evento) => {
 
 
     evento.preventDefault();
-    if (!validarFormulario(formulario, ['cita_id'])) {
+    if (!validarFormulario(formulario, ['cita_id','cita_fecha'])) {
         Toast.fire({
             icon: 'info',
             text: 'Debe llenar todos los datos'
@@ -47,7 +46,7 @@ const guardar = async (evento) => {
             case 1:
                 formulario.reset();
                 icon = 'success';
-                buscar();
+                // buscar();
                 break;
 
             case 0:
@@ -150,10 +149,8 @@ const colocarDatos = (datos) => {
     btnGuardar.parentElement.style.display = 'none';
     btnBuscar.disabled = true;
     btnBuscar.parentElement.style.display = 'none';
-    btnModificar.disabled = false;
-    btnModificar.parentElement.style.display = '';
-    btnCancelar.disabled = false;
-    btnCancelar.parentElement.style.display = '';
+    // btnVerDetalle.disabled = false;
+    btnVerDetalle.parentElement.style.display = '';
     divTabla.style.display = 'none';
 
 };
@@ -163,10 +160,9 @@ const cancelarAccion = () => {
     btnGuardar.parentElement.style.display = '';
     btnBuscar.disabled = false;
     btnBuscar.parentElement.style.display = '';
-    btnModificar.disabled = true;
-    btnModificar.parentElement.style.display = 'none';
-    btnCancelar.disabled = true;
-    btnCancelar.parentElement.style.display = 'none';
+    // btnVerDetalle.disabled = true;
+    btnVerDetalle.parentElement.style.display = '';
+   
     divTabla.style.display = '';
 };
 
@@ -268,8 +264,5 @@ const eliminar = async (id) => {
     }
 };
 
-buscar();
 formulario.addEventListener('submit', guardar );
-btnBuscar.addEventListener('click', buscar);
-btnCancelar.addEventListener('click', cancelarAccion);
-btnModificar.addEventListener('click', modificar);
+btnVerDetalle.addEventListener('click', modificar);

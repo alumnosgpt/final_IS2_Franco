@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Exception;
+use Model\Cita;
 use Model\Medico;
 use Model\Clinica;
 use Model\Especialidad;
@@ -11,12 +12,10 @@ use MVC\Router;
 
 class CitaController{
     public static function index(Router $router){
-        $clinicas= Clinica::Fetcharray('SELECT * FROM clinicas where clinica_situacion = 1');
-        $especialidades= Especialidad::Fetcharray('SELECT * FROM especialidades where espec_situacion = 1');
+        $pacientes= Clinica::Fetcharray('SELECT * FROM pacientes where paciente_situacion = 1');
         $medicos= Medico::Fetcharray('SELECT * FROM medicos where medico_situacion = 1');
         $router->render('citas/index', [
-            'clinicas' => $clinicas,
-            'especialidades' => $especialidades,
+            'pacientes' => $pacientes,
             'medicos' => $medicos,
 
         ]);
@@ -25,14 +24,16 @@ class CitaController{
 
     public static function guardarAPI(){
         try {
-
- 
-         
+           
+            $_POST['cita_fecha'] = str_replace('T', ' ', $_POST['cita_fecha']);
+            // $_POST['cita_fecha'] = '2013/01/04';
             $cita = new Cita($_POST);
-        
+           
+            
             $resultado = $cita->crear();
-
-  
+            
+            echo json_encode($cita);
+            exit;
 
             if($resultado['resultado'] == 1){
                 echo json_encode([

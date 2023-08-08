@@ -8,7 +8,7 @@
                         <select name="cita_paciente" id="cita_paciente" class="form-control">
                             <option value="">SELECCIONE...</option>
                             <?php foreach ($pacientes as $key => $paciente) : ?>
-                                <option value="<?= $paciente['PACIENTE_ID'] ?>"><?= $paciente['PACIENTE_NOMBRE'] ?></option>
+                                <option value="<?= $paciente['paciente_id'] ?>"><?= $paciente['paciente_nombre'] ?></option>
                             <?php endforeach?>
                         </select>
                     </div>
@@ -19,7 +19,7 @@
                         <select name="cita_medico" id="cita_medico" class="form-control">
                             <option value="">SELECCIONE...</option>
                             <?php foreach ($medicos as $key => $medico) : ?>
-                                <option value="<?= $medico['MEDICO_ID'] ?>"><?= $medico['MEDICO_NOMBRE'] ?></option>
+                                <option value="<?= $medico['medico_id'] ?>"><?= $medico['medico_nombre'] ?></option>
                             <?php endforeach?>
                         </select>
                     </div>
@@ -27,7 +27,7 @@
                 <div class="row mb-3">
                     <div class="col">
                         <label for="cita_fecha">Fecha de la cita</label>
-                        <input type="date" value="<?= date('Y-m-d') ?>" name="cita_fecha" id="cita_fecha" class="form-control">
+                        <input type="date" name="cita_fecha" id="cita_fecha" class="form-control">
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -48,6 +48,9 @@
                 <div class="row mb-3">
                     <div class="col">
                         <button type="submit" class="btn btn-primary w-100">Guardar</button>
+                    </div>
+                    <div class="col">
+                        <button type="button"  id="btnVerDetalle"class="btn btn-warning w-100">Ver detalle</button>
                     </div>
                 </div>
             </form>
